@@ -7,5 +7,5 @@ window.KPI_SITE_CONFIG = {
   portfolioButtonLabel: "Visit My Website",
   upiQrImage: "assets/images/upi-qr.jpeg",
   supportButtonLabel: "☕ Buy Me a Coffee",
-  disclaimer: "Independent calculation aid based on referenced HUF Demand-Side SOP and CACP data; not an official HUF portal."
+  disclaimer: "Independent calculation aid based on referenced HUF Demand-Side SOP and CACP data."
 };
