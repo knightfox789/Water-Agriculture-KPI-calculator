@@ -1,0 +1,18 @@
+{
+  "name": "Water & Agriculture KPI Calculator",
+  "short_name": "KPI Calculator",
+  "description": "Interactive water and agriculture KPI calculator for irrigation water measurement, demand-side water saving, additional production, farmer income and person-days using transparent methods, CACP reference data and Leaflet state maps.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f8fb",
+  "theme_color": "#176b72",
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

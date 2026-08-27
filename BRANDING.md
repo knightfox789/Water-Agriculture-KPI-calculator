@@ -1,17 +1,23 @@
 # Branding Configuration
 
-The site uses a single shared config file:
+Shared branding config:
 
 ```text
 assets/js/site-config.js
 ```
 
-Change the portfolio URL there and every shared **Visit My Website** button updates automatically.
+Current portfolio URL:
 
-The supplied UPI QR screenshot is stored at:
+```text
+https://knightfox789.github.io/kaushal-gadariya-portfolio/
+```
+
+The **Visit My Website** button is intentionally shown in only one place: the **About** page.
+
+The UPI QR image is stored at:
 
 ```text
 assets/images/upi-qr.jpeg
 ```
 
-The **Buy Me a Coffee** buttons open this image in a modal. No payment is processed by the website.
+**Buy Me a Coffee** opens the QR image in a modal. The site does not collect payment details.

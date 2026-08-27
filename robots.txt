@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://knightfox789.github.io/water-agriculture-kpi-calculator/sitemap.xml

@@ -3,7 +3,7 @@
 ## Website identity
 
 **Water & Agriculture KPI Calculator**  
-Developed by **Kaushal Gadariya**  
+**Kaushal Gadariya**  
 Water Security • GIS • Agriculture • Data & M&E
 
 ## Pages
@@ -32,13 +32,13 @@ All saved results -> Home session summary
 
 Edit only `assets/js/site-config.js` to change:
 
-- developer/brand name
+- brand name
 - tagline
 - GitHub/portfolio website URL
 - button label
 - UPI QR image path
 
-The **Visit My Website** button is wired to `portfolioUrl` in this config. It currently contains a placeholder until the real URL is supplied.
+The **Visit My Website** button is shown only on the About page and points to `https://knightfox789.github.io/kaushal-gadariya-portfolio/`.
 
 ## Support button
 
@@ -47,3 +47,7 @@ Every shared header/footer has **Buy Me a Coffee**. It opens a modal containing 
 ## GitHub status
 
 No GitHub deployment has been activated yet. `deployment/pages.yml.example` is only a future deployment template. Final GitHub configuration should happen after calculator/UI review.
+
+## Calculation report output
+
+Each calculator includes a clean A4 **Print / Save PDF** report generated from the visible inputs, formula, results and methodology notes.

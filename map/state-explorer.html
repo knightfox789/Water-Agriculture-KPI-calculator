@@ -1,22 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="State Explorer - Water & Agriculture KPI Calculator" />
-  <title>State Explorer | Water & Agriculture KPI Calculator</title>
-  <link rel="stylesheet" href="../assets/css/site.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>India State CACP Data Explorer | Interactive Leaflet Map</title>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+<link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<meta content="Explore state-wise CACP crop reference-data coverage on an interactive India state boundary map. No-data states remain distinct from zero values." name="description"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="Kaushal Gadariya" name="author"/><meta content="#176b72" name="theme-color"/><meta content="website" property="og:type"/><meta content="Water &amp; Agriculture KPI Calculator" property="og:site_name"/><meta content="India State CACP Data Explorer | Interactive Leaflet Map" property="og:title"/><meta content="Explore state-wise CACP crop reference-data coverage on an interactive India state boundary map. No-data states remain distinct from zero values." property="og:description"/><meta content="https://knightfox789.github.io/water-agriculture-kpi-calculator/map/state-explorer.html" property="og:url"/><meta content="summary" name="twitter:card"/><meta content="India State CACP Data Explorer | Interactive Leaflet Map" name="twitter:title"/><meta content="Explore state-wise CACP crop reference-data coverage on an interactive India state boundary map. No-data states remain distinct from zero values." name="twitter:description"/><link href="https://knightfox789.github.io/water-agriculture-kpi-calculator/map/state-explorer.html" rel="canonical"/><link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../manifest.webmanifest" rel="manifest"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"India State CACP Data Explorer | Interactive Leaflet Map","description":"Explore state-wise CACP crop reference-data coverage on an interactive India state boundary map. No-data states remain distinct from zero values.","url":"https://knightfox789.github.io/water-agriculture-kpi-calculator/map/state-explorer.html","isPartOf":{"@type":"WebSite","name":"Water & Agriculture KPI Calculator","url":"https://knightfox789.github.io/water-agriculture-kpi-calculator/"},"creator":{"@type":"Person","name":"Kaushal Gadariya","url":"https://knightfox789.github.io/kaushal-gadariya-portfolio/"}}</script></head>
 <body data-root="..">
-  <div id="site-header"></div>
-  <main class="container"><section class="page-head"><p class="eyebrow">GIS data explorer</p><h1>India State Data Explorer</h1><p class="lede">Click a state boundary to see the CACP reference-data coverage available in the consolidated master. States without CACP records remain valid GIS features and are shown as no-data rather than zero.</p></section><div class="map-layout"><section class="card" style="padding:14px"><div id="map"></div></section><aside id="stateInfo" class="result-card">Click a state.</aside></div></main>
-  <div id="site-footer"></div>
-  <script src="../assets/js/site-config.js"></script>
-  <script src="../assets/js/site-shell.js"></script>
-  <script src="../assets/js/app-state.js"></script>
-  <script src="../assets/js/calculators.js"></script>
-  <script src="../assets/js/page-utils.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="../assets/js/state-explorer-page.js"></script>
+<div id="site-header"></div>
+<main class="container"><section class="page-head"><p class="eyebrow">GIS data explorer</p><h1>India State Data Explorer</h1><p class="lede">Click a state boundary to see the CACP reference-data coverage available in the consolidated master. States without CACP records remain valid GIS features and are shown as no-data rather than zero.</p></section><div class="map-layout"><section class="card" style="padding:14px"><div id="map"></div></section><aside class="result-card" id="stateInfo">Click a state.</aside></div></main>
+<div id="site-footer"></div>
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/site-shell.js"></script>
+<script src="../assets/js/app-state.js"></script>
+<script src="../assets/js/calculators.js"></script>
+<script src="../assets/js/page-utils.js"></script>
+<script crossorigin="" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="../assets/js/state-explorer-page.js"></script>
 </body>
 </html>

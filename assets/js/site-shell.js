@@ -11,9 +11,9 @@
     header.className = "site-header";
     header.innerHTML = `
       <div class="nav-wrap">
-        <a class="brand" href="${url("index.html")}">
+        <a class="brand" href="${url("index.html")}" aria-label="${cfg.siteTitle || "KPI Calculator"} home">
           <span class="brand-mark">${cfg.brandShort || "KPI"}</span>
-          <span class="brand-text"><strong>${cfg.siteTitle || "KPI Calculator"}</strong><small>by ${cfg.brandName || "Developer"}</small></span>
+          <span class="brand-text"><strong>${cfg.siteTitle || "KPI Calculator"}</strong><small>${cfg.brandName || ""}</small></span>
         </a>
         <button class="menu-button" type="button" aria-label="Toggle navigation">☰</button>
         <nav class="nav-links" aria-label="Main navigation">
@@ -25,7 +25,6 @@
           <a href="${url("calculators/person-days.html")}">Person-Days</a>
           <a href="${url("map/state-explorer.html")}">State Map</a>
           <a href="${url("methodology/index.html")}">Methodology</a>
-          <a class="portfolio" id="portfolioNav" data-portfolio-link href="${cfg.portfolioUrl || "#"}" target="_blank" rel="noopener">${cfg.portfolioButtonLabel || "Visit My Website"}</a>
           <button class="support" type="button" data-open-support>${cfg.supportButtonLabel || "☕ Support"}</button>
         </nav>
       </div>`;
@@ -41,13 +40,12 @@
       <div class="footer-wrap">
         <div>
           <strong>${cfg.siteTitle || "KPI Calculator"}</strong>
-          <p>Developed by ${cfg.brandName || "Developer"} · ${cfg.tagline || ""}</p>
+          <p>${cfg.brandName || ""} · ${cfg.tagline || ""}</p>
           <p>${cfg.disclaimer || ""}</p>
         </div>
         <div class="footer-actions">
           <a class="btn" href="${url("about/index.html")}">About</a>
           <a class="btn" href="${url("data-sources/index.html")}">Data Sources</a>
-          <a class="btn primary" data-portfolio-link href="${cfg.portfolioUrl || "#"}" target="_blank" rel="noopener">${cfg.portfolioButtonLabel || "Visit My Website"}</a>
           <button class="btn support" data-open-support>${cfg.supportButtonLabel || "☕ Buy Me a Coffee"}</button>
         </div>
       </div>`;
@@ -59,9 +57,9 @@
   modal.innerHTML = `
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
       <div class="modal-head"><div><p class="eyebrow">Support this project</p><h2 id="supportTitle">☕ Buy Me a Coffee</h2></div><button class="modal-close" type="button" aria-label="Close">✕</button></div>
-      <p>If this calculator is useful, you can support its continued development by scanning the UPI QR code below.</p>
-      <div class="qr-wrap"><img src="${url(cfg.upiQrImage || "assets/images/upi-qr.jpeg")}" alt="UPI QR code supplied by the site developer" /></div>
-      <p style="color:var(--muted);font-size:13px">The website itself does not collect or process payment details. Payment is handled by your UPI app.</p>
+      <p>If this calculator is useful, you can support its continued improvement by scanning the UPI QR code below.</p>
+      <div class="qr-wrap"><img src="${url(cfg.upiQrImage || "assets/images/upi-qr.jpeg")}" alt="UPI QR code for supporting the Water & Agriculture KPI Calculator" /></div>
+      <p style="color:var(--muted);font-size:13px">The website does not collect or process payment details. Payment is handled by your UPI app.</p>
     </div>`;
   document.body.appendChild(modal);
   const open = () => { modal.hidden = false; document.body.style.overflow='hidden'; };
@@ -71,17 +69,23 @@
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
 
-
+  // Portfolio link is intentionally exposed only on the About page.
   document.querySelectorAll('[data-portfolio-link]').forEach(a => {
     a.href = cfg.portfolioUrl || '#';
     a.textContent = cfg.portfolioButtonLabel || 'Visit My Website';
   });
 
-  // Warn only when the placeholder portfolio URL is still present.
-  document.querySelectorAll('a[href*="YOUR_GITHUB_USERNAME"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      alert('Portfolio URL is still a placeholder. Edit assets/js/site-config.js and replace YOUR_GITHUB_USERNAME with your GitHub portfolio URL.');
+  // Calculator pages receive one print/PDF action in the result panel.
+  const calcCard = document.querySelector('.calculator-card');
+  const resultCard = document.querySelector('.result-card');
+  if (calcCard && resultCard) {
+    const actions = document.createElement('div');
+    actions.className = 'form-actions report-actions';
+    actions.innerHTML = '<button class="btn" type="button" data-print-calculation>🖨 Print / Save PDF</button>';
+    resultCard.appendChild(actions);
+    actions.querySelector('[data-print-calculation]').addEventListener('click', () => {
+      if (window.KpiPrintReport?.print) window.KpiPrintReport.print();
+      else window.print();
     });
-  });
+  }
 })();

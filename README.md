@@ -1,6 +1,6 @@
 # Water & Agriculture KPI Calculator
 
-A multi-page static website framework for five connected calculation modules:
+A multi-page static website for five connected calculation modules:
 
 1. Water Measurement
 2. Demand-Side Water Saving
@@ -8,11 +8,21 @@ A multi-page static website framework for five connected calculation modules:
 4. Additional Farmer Income
 5. Person-Days Generated
 
-The site includes Leaflet state-boundary integration, CACP master data, personal branding, a configurable **Visit My Website** button, and a **Buy Me a Coffee** modal showing the supplied UPI QR image.
+The site includes Leaflet state-boundary integration, CACP master data, personal branding, a single **Visit My Website** portfolio button on the About page, a **Buy Me a Coffee** UPI QR modal, SEO metadata, sitemap/robots files, and clean A4 Print / Save PDF calculation reports.
+
+## Portfolio
+
+Configured portfolio URL:
+
+```text
+https://knightfox789.github.io/kaushal-gadariya-portfolio/
+```
+
+The portfolio button intentionally appears only on the **About** page.
 
 ## Preview locally
 
-Do not open the HTML files with `file://` because the map/data pages use `fetch()`.
+Do not open the HTML files with `file://` because map/data pages use `fetch()`.
 
 ```bash
 python -m http.server 8000
@@ -20,27 +30,55 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
-## Change personal branding
+## Print / Save PDF
 
-Edit only:
+Each calculator result panel contains **Print / Save PDF**. It creates a clean A4 calculation report containing:
+
+- calculator name and timestamp,
+- current visible inputs,
+- formula/method,
+- calculated results,
+- methodology/data notes,
+- calculator branding and disclaimer.
+
+Use the browser print dialog and choose **Save as PDF**.
+
+## SEO readiness
+
+Prepared public URL:
 
 ```text
-assets/js/site-config.js
+https://knightfox789.github.io/water-agriculture-kpi-calculator/
 ```
 
-Important fields:
+Included:
 
-```js
-brandName: "Kaushal Gadariya",
-portfolioUrl: "https://github.com/YOUR_GITHUB_USERNAME",
-upiQrImage: "assets/images/upi-qr.jpeg"
+- unique page titles and meta descriptions,
+- index/follow robots directives,
+- canonical URLs,
+- Open Graph and Twitter metadata,
+- JSON-LD structured data,
+- semantic single-H1 pages,
+- `robots.txt`,
+- `sitemap.xml`,
+- responsive viewport,
+- favicon and web manifest.
+
+If the final GitHub repository path is different, run:
+
+```bash
+python scripts/update_site_url.py https://knightfox789.github.io/YOUR-FINAL-REPO/
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with the real GitHub portfolio/repository/profile URL when ready.
+Local SEO audit:
+
+```bash
+python scripts/seo_check.py
+```
 
 ## CACP update architecture
 
-Human-maintained canonical master:
+Canonical master:
 
 ```text
 source_data/Consolidated_Person_Days_Master_Input_Data.xlsx
@@ -63,13 +101,7 @@ data/version.json
 
 ## GitHub status
 
-This package is **not deployed** and does not activate a GitHub Action yet. An inactive workflow template is provided at:
-
-```text
-deployment/pages.yml.example
-```
-
-After the UI/methodology is approved, it can be copied to `.github/workflows/pages.yml` and adapted to deploy the complete multi-page site.
+This package is not deployed and does not activate a GitHub Action yet. An inactive workflow template remains at `deployment/pages.yml.example`.
 
 ## Method caution
 

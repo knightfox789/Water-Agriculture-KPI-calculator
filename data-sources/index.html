@@ -1,25 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Data Sources - Water & Agriculture KPI Calculator" />
-  <title>Data Sources | Water & Agriculture KPI Calculator</title>
-  <link rel="stylesheet" href="../assets/css/site.css" />
-  
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Data Sources, CACP Master &amp; Update Pipeline</title>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+<meta content="Review HUF demand-side methodology sources, CACP Rabi and Kharif reference data, the consolidated master, GIS boundaries and future update workflow." name="description"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><meta content="Kaushal Gadariya" name="author"/><meta content="#176b72" name="theme-color"/><meta content="website" property="og:type"/><meta content="Water &amp; Agriculture KPI Calculator" property="og:site_name"/><meta content="Data Sources, CACP Master &amp; Update Pipeline" property="og:title"/><meta content="Review HUF demand-side methodology sources, CACP Rabi and Kharif reference data, the consolidated master, GIS boundaries and future update workflow." property="og:description"/><meta content="https://knightfox789.github.io/water-agriculture-kpi-calculator/data-sources/" property="og:url"/><meta content="summary" name="twitter:card"/><meta content="Data Sources, CACP Master &amp; Update Pipeline" name="twitter:title"/><meta content="Review HUF demand-side methodology sources, CACP Rabi and Kharif reference data, the consolidated master, GIS boundaries and future update workflow." name="twitter:description"/><link href="https://knightfox789.github.io/water-agriculture-kpi-calculator/data-sources/" rel="canonical"/><link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/><link href="../manifest.webmanifest" rel="manifest"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Data Sources, CACP Master & Update Pipeline","description":"Review HUF demand-side methodology sources, CACP Rabi and Kharif reference data, the consolidated master, GIS boundaries and future update workflow.","url":"https://knightfox789.github.io/water-agriculture-kpi-calculator/data-sources/","isPartOf":{"@type":"WebSite","name":"Water & Agriculture KPI Calculator","url":"https://knightfox789.github.io/water-agriculture-kpi-calculator/"},"creator":{"@type":"Person","name":"Kaushal Gadariya","url":"https://knightfox789.github.io/kaushal-gadariya-portfolio/"}}</script></head>
 <body data-root="..">
-  <div id="site-header"></div>
-  <main class="container"><section class="page-head"><p class="eyebrow">Provenance</p><h1>Data Sources & Update Model</h1><p class="lede">Reference data is kept separate from output calculations so future CACP reports can be incorporated without rewriting the front-end.</p></section>
+<div id="site-header"></div>
+<main class="container"><section class="page-head"><p class="eyebrow">Provenance</p><h1>Data Sources &amp; Update Model</h1><p class="lede">Reference data is kept separate from output calculations so future CACP reports can be incorporated without rewriting the front-end.</p></section>
 <section class="card" style="padding:22px"><h2>Canonical reference inputs</h2><table class="data-table"><thead><tr><th>Source</th><th>Use in website</th></tr></thead><tbody><tr><td>HUF Demand-Side SOP (August 2025)</td><td>Water measurement, water-saving scenarios, additional-production methodology and person-days framework.</td></tr><tr><td>CACP Rabi Price Policy 2026-27</td><td>Rabi labour cost, wage, actual yield and projected yield master inputs.</td></tr><tr><td>CACP Kharif Price Policy 2025-26</td><td>Kharif labour cost, wage, actual yield and projected yield master inputs.</td></tr><tr><td>Consolidated_Person_Days_Master_Input_Data.xlsx</td><td>Human-maintained CACP Year × Basis × Season × State × Crop master.</td></tr><tr><td>State_NWIC ESRI shapefile</td><td>India state/UT boundaries for Leaflet maps.</td></tr></tbody></table></section>
 <section class="section card" style="padding:22px"><h2>Future CACP update pipeline</h2><div class="flow"><span class="flow-box">New CACP Report</span><span class="flow-arrow">→</span><span class="flow-box">Update Excel Master</span><span class="flow-arrow">→</span><span class="flow-box">Validate</span><span class="flow-arrow">→</span><span class="flow-box">Build JSON / GeoJSON</span><span class="flow-arrow">→</span><span class="flow-box">Redeploy</span></div><p>The front-end discovers available year, season, state and crop values from data rather than hard-coded dropdown lists. A GitHub Pages workflow template is included under <span class="code">deployment/pages.yml.example</span>, but it is intentionally not activated yet.</p></section>
 <section class="section card" style="padding:22px"><h2>Data rules</h2><ul><li>Unique master key: Reference Year + Basis Type + Season + State + Crop.</li><li>Do not silently replace missing state wage with an All-India wage.</li><li>Projected master rows retain projected yield; latest compatible Actual labour/wage may be used only in the calculation layer and must be disclosed.</li><li>GIS no-data is not zero.</li></ul></section></main>
-  <div id="site-footer"></div>
-  <script src="../assets/js/site-config.js"></script>
-  <script src="../assets/js/site-shell.js"></script>
-  <script src="../assets/js/app-state.js"></script>
-  <script src="../assets/js/calculators.js"></script>
-  <script src="../assets/js/page-utils.js"></script>
-  
+<div id="site-footer"></div>
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/site-shell.js"></script>
+<script src="../assets/js/app-state.js"></script>
+<script src="../assets/js/calculators.js"></script>
+<script src="../assets/js/page-utils.js"></script>
 </body>
 </html>
