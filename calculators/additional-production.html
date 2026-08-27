@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Additional Production - Water & Agriculture KPI Calculator" />
+  <title>Additional Production | Water & Agriculture KPI Calculator</title>
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  
+</head>
+<body data-root="..">
+  <div id="site-header"></div>
+  <main class="container"><section class="page-head"><p class="eyebrow">Calculator 3 of 5</p><h1>Additional Agricultural Production</h1><p class="lede">Calculate incremental agricultural production. Use direct yield difference for the same crop, and Crop Equivalent Yield (CEY) where crop identity or crop mix changes.</p></section><div class="layout-2"><section class="calculator-card"><div class="field full"><label>Production scenario</label><select id="scenarioSelect"><option value="same">Same crop</option><option value="change">Crop change</option><option value="intercrop">Intercropping vs monocrop control</option></select></div><div id="calcMessage" hidden></div>
+<div data-scenario-panel="same"><div class="form-grid"><div class="field"><label>Control yield (kg/ha)</label><input id="sameCY" type="number" step="0.01"></div><div class="field"><label>Programme yield (kg/ha)</label><input id="samePY" type="number" step="0.01"></div><div class="field"><label>Adopted area (ha)</label><input id="sameArea" type="number" step="0.01"></div></div><div class="formula">Additional Production = (Programme Yield − Control Yield) × Adopted Area</div></div>
+<div data-scenario-panel="change" hidden><div class="form-grid"><div class="field"><label>Control yield (kg/ha)</label><input id="changeCY" type="number" step="0.01"></div><div class="field"><label>Programme yield (kg/ha)</label><input id="changePY" type="number" step="0.01"></div><div class="field"><label>Control crop price (₹/kg)</label><input id="changeCP" type="number" step="0.01"></div><div class="field"><label>Programme crop price (₹/kg)</label><input id="changePP" type="number" step="0.01"></div><div class="field"><label>Adopted area (ha)</label><input id="changeArea" type="number" step="0.01"></div></div><div class="formula">CEY = Programme Yield × Programme Price ÷ Control Price</div></div>
+<div data-scenario-panel="intercrop" hidden><div class="form-grid"><div class="field"><label>Control crop yield (kg/ha)</label><input id="interCY" type="number" step="0.01"></div><div class="field"><label>Control crop price (₹/kg)</label><input id="interCP" type="number" step="0.01"></div><div class="field"><label>Adopted area (ha)</label><input id="interArea" type="number" step="0.01"></div></div><h3 style="margin-top:18px">Programme crop mix</h3><div id="prodCropRows"></div><button class="btn" id="addProdCrop">+ Add Programme Crop</button><div class="formula">CEYᵢ = (Yieldᵢ × Area Shareᵢ × Priceᵢ) ÷ Control Crop Price</div></div>
+<div class="form-actions"><button class="btn primary" id="calculateBtn">Calculate Additional Production</button><button class="btn" id="goPersonDays">Use Result in Person-Days →</button></div></section><aside class="result-card"><p class="eyebrow">KPI output</p><h2>Additional Production</h2><div class="metric-grid"><div class="metric"><span>Incremental yield</span><strong id="incYield">—</strong></div><div class="metric"><span>Additional kg</span><strong id="addKg">—</strong></div><div class="metric primary"><span>Additional qtl</span><strong id="addQtl">—</strong></div><div class="metric accent"><span>Additional tonnes</span><strong id="addTonnes">—</strong></div></div><div class="notice warn">CEY price is only a normalization mechanism for the Production KPI. It is not the Additional Income calculation.</div></aside></div></main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/site-shell.js"></script>
+  <script src="../assets/js/app-state.js"></script>
+  <script src="../assets/js/calculators.js"></script>
+  <script src="../assets/js/page-utils.js"></script>
+  <script src="../assets/js/production-page.js"></script>
+</body>
+</html>

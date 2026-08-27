@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Methodology - Water & Agriculture KPI Calculator" />
+  <title>Methodology | Water & Agriculture KPI Calculator</title>
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  
+</head>
+<body data-root="..">
+  <div id="site-header"></div>
+  <main class="container"><section class="page-head"><p class="eyebrow">Calculation framework</p><h1>Methodology & Formula Register</h1><p class="lede">A transparent register of the formulas implemented in the website. Field teams should use the scenario and measurement method that matches actual conditions and retain supporting evidence.</p></section>
+<section class="card" style="padding:22px"><h2>Common principle: programme vs control</h2><p>For demand-side comparison, use the same season/year and comparable agro-climatic conditions wherever the governing methodology requires it. Normalize values to a common area before extrapolation.</p></section>
+<section class="section card" style="padding:22px"><h2>1. Water Measurement</h2><h3>Pump</h3><div class="formula">TH = SWL + FL + DH<br>Q (L/min) = 60 × HP × 75 × efficiency ÷ TH</div><h3 style="margin-top:18px">Field depth</h3><div class="formula">Average depth = (d1+d2+d3+d4+d5)/5<br>Water (L) = depth (mm) × area (m²)</div><h3 style="margin-top:18px">90° V-notch</h3><div class="formula">Q = 1.38 × H^2.5<br>V = Q × t</div></section>
+<section class="section card" style="padding:22px"><h2>2. Water Saving</h2><div class="formula">Same crop / crop change: Water Saved (m³/ha) = Control − Programme</div><p>Intercropping allocates programme water by crop-area share, compares water use per kg against crop-wise control data and multiplies by programme yield. Rainfed saving uses improved water productivity:</p><div class="formula">WP = Yield / Rainfall<br>Saving (mm) = R × (WPp − WPc) ÷ WPp<br>Saving (m³) = mm × area(ha) × 10</div></section>
+<section class="section card" style="padding:22px"><h2>3. Additional Production</h2><div class="formula">Same crop: (Yp − Yc) × Area</div><p>For crop change or intercropping, use Crop Equivalent Yield:</p><div class="formula">CEY = Programme Yield × Programme Price ÷ Control Price</div></section>
+<section class="section card" style="padding:22px"><h2>4. Additional Income</h2><div class="formula">Gross Income = Production × Price<br>Net Income = Gross Income − Relevant Production Cost<br>Additional Income = Programme Net − Control Net</div><div class="notice warn">This module follows project/Form 3C crop-economics logic. It is not represented here as a dedicated formula explicitly published in the reviewed HUF Demand-Side SOP.</div></section>
+<section class="section card" style="padding:22px"><h2>5. Person-Days</h2><div class="formula">Labour Days/ha = CACP Human Labour Cost ÷ Seasonal Daily Wage<br>Labour Days/qtl = Labour Days/ha ÷ CACP Yield<br>Person-Days = Additional Production(qtl) × Labour Days/qtl</div><div class="notice warn">The labour-days coefficient is a derived proxy from CACP cost/wage/yield inputs, not a directly published physical labour-days norm in the annex tables used.</div></section>
+<section class="section notice"><strong>Rainfed formula note:</strong> The implementation follows the governing methodology formula using <span class="code">WPp</span> in the denominator. A worked example in the reviewed SOP appears internally inconsistent, so the formula itself is treated as authoritative pending formal clarification.</section></main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/site-shell.js"></script>
+  <script src="../assets/js/app-state.js"></script>
+  <script src="../assets/js/calculators.js"></script>
+  <script src="../assets/js/page-utils.js"></script>
+  
+</body>
+</html>

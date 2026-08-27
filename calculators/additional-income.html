@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Additional Income - Water & Agriculture KPI Calculator" />
+  <title>Additional Income | Water & Agriculture KPI Calculator</title>
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  
+</head>
+<body data-root="..">
+  <div id="site-header"></div>
+  <main class="container"><section class="page-head"><p class="eyebrow">Calculator 4 of 5</p><h1>Additional Farmer Income</h1><p class="lede">Compare programme and control crop economics. This module follows the project/Form 3C crop-economics pathway and is kept distinct from CEY used for the Additional Production KPI.</p></section><div class="layout-2"><section class="calculator-card"><div id="calcMessage" hidden></div><div class="form-grid"><div class="field full"><label>Comparable / adopted area (ha)</label><input id="incArea" type="number" step="0.01"></div><div class="field"><h3>Control</h3></div><div class="field"><h3>Programme</h3></div><div class="field"><label>Control yield (kg/ha)</label><input id="incCY" type="number" step="0.01"></div><div class="field"><label>Programme yield (kg/ha)</label><input id="incPY" type="number" step="0.01"></div><div class="field"><label>Control price (₹/kg)</label><input id="incCP" type="number" step="0.01"></div><div class="field"><label>Programme price (₹/kg)</label><input id="incPP" type="number" step="0.01"></div><div class="field"><label>Control production cost (₹/ha)</label><input id="incCC" type="number" step="0.01"></div><div class="field"><label>Programme production cost (₹/ha)</label><input id="incPC" type="number" step="0.01"></div></div><div class="formula">Additional Income = Programme Net Income − Control Net Income</div><div class="form-actions"><button class="btn primary" id="calculateBtn">Calculate Additional Income</button></div></section><aside class="result-card"><p class="eyebrow">KPI output</p><h2>Additional Net Income</h2><div class="metric-grid"><div class="metric"><span>Control net</span><strong id="controlNet">—</strong></div><div class="metric"><span>Programme net</span><strong id="programmeNet">—</strong></div><div class="metric"><span>Additional revenue</span><strong id="additionalRevenue">—</strong></div><div class="metric"><span>Cost saving (+) / extra cost (−)</span><strong id="costSaving">—</strong></div><div class="metric accent"><span>Additional income</span><strong id="additionalIncome">—</strong></div><div class="metric primary"><span>Additional income / ha</span><strong id="incomePerHa">—</strong></div><div class="metric"><span>Income change</span><strong id="incomePct">—</strong></div></div><div class="notice warn"><strong>Method status:</strong> Project/Form 3C crop-economics method. The reviewed Demand-Side SOP does not contain a dedicated numbered income-calculation section equivalent to the other KPI sections.</div></aside></div></main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/site-shell.js"></script>
+  <script src="../assets/js/app-state.js"></script>
+  <script src="../assets/js/calculators.js"></script>
+  <script src="../assets/js/page-utils.js"></script>
+  <script src="../assets/js/income-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Person-Days - Water & Agriculture KPI Calculator" />
+  <title>Person-Days | Water & Agriculture KPI Calculator</title>
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+<body data-root="..">
+  <div id="site-header"></div>
+  <main class="container"><section class="page-head"><p class="eyebrow">Calculator 5 of 5</p><h1>Person-Days Generated</h1><p class="lede">Select CACP basis, reference year, season, crop and state. Click a state boundary or use the dropdown, then enter Additional Production in quintals.</p></section><div class="map-layout"><section class="calculator-card"><div class="form-grid"><div class="field"><label>Basis</label><select id="basisSelect"></select></div><div class="field"><label>Reference year</label><select id="yearSelect"></select></div><div class="field"><label>Season</label><select id="seasonSelect"></select></div><div class="field"><label>Crop</label><select id="cropSelect"></select></div><div class="field"><label>State</label><select id="stateSelect"></select></div><div class="field"><label>Additional Production (qtl)</label><input id="additionalProduction" type="number" min="0" step="0.01"></div></div><div class="form-actions"><button class="btn" id="loadProduction">Load saved Additional Production</button></div><div id="personDaysMap" style="margin-top:18px"></div><h3 style="margin-top:18px">States available for current filter</h3><div class="chips" id="availableStates"></div></section><aside class="result-card"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><div><p class="eyebrow">KPI output</p><h2>Person-Days</h2></div><span id="statusPill" class="status">Loading</span></div><div class="metric-grid"><div class="metric"><span>Human labour cost ₹/ha</span><strong id="labourCost">—</strong></div><div class="metric"><span>Seasonal wage ₹/day</span><strong id="dailyWage">—</strong></div><div class="metric"><span>Yield qtl/ha</span><strong id="yieldValue">—</strong></div><div class="metric"><span>Labour days / ha</span><strong id="daysPerHa">—</strong></div><div class="metric"><span>Labour days / qtl</span><strong id="daysPerQtl">—</strong></div><div class="metric accent"><span>Person-Days generated</span><strong id="personDays">—</strong></div></div><div id="provenance" class="provenance"></div><div class="notice warn"><strong>Derived proxy:</strong> Human Labour Cost ÷ Daily Wage is used to estimate labour-days/ha because the CACP price-policy annex inputs used here do not directly publish physical labour-days/ha.</div></aside></div></main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/site-shell.js"></script>
+  <script src="../assets/js/app-state.js"></script>
+  <script src="../assets/js/calculators.js"></script>
+  <script src="../assets/js/page-utils.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="../assets/js/person-days-page.js"></script>
+</body>
+</html>

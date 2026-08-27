@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Home - Water & Agriculture KPI Calculator" />
+  <title>Home | Water & Agriculture KPI Calculator</title>
+  <link rel="stylesheet" href="./assets/css/site.css" />
+  
+</head>
+<body data-root=".">
+  <div id="site-header"></div>
+  <main class="container">
+<section class="hero">
+  <div>
+    <p class="eyebrow">Demand-side calculation toolkit</p>
+    <h1>Measure water. Quantify impact. Keep the method transparent.</h1>
+    <p class="lede">One integrated website for water measurement, water saving, additional agricultural production, additional farmer income and person-days generated. Built around programme/control comparison, documented formulas and auditable CACP reference data.</p>
+    <div class="actions"><a class="btn primary" href="calculators/water-measurement.html">Start Calculating</a><a class="btn" href="methodology/index.html">View Methodology</a><a class="btn" href="map/state-explorer.html">Explore State Data</a><button class="btn support" data-open-support>☕ Buy Me a Coffee</button></div>
+  </div>
+  <div class="hero-card">
+    <p class="eyebrow">Developer</p><h2>Kaushal Gadariya</h2><p>Water Security • GIS • Agriculture • Data & M&E</p>
+    <div class="mini-grid"><div class="mini-stat"><span>Calculation modules</span><strong>5</strong></div><div class="mini-stat"><span>CACP master rows</span><strong>580</strong></div><div class="mini-stat"><span>CACP states</span><strong>19</strong></div><div class="mini-stat"><span>GIS boundaries</span><strong>37</strong></div></div>
+    <div class="actions"><a class="btn primary" data-portfolio-link href="#" target="_blank" rel="noopener">Visit My Website</a></div>
+  </div>
+</section>
+<section class="section"><div class="section-head"><div><p class="eyebrow">Five connected modules</p><h2>KPI Calculation Hub</h2></div><p>Use one module independently or pass results into the next.</p></div>
+<div class="kpi-grid">
+<a class="kpi-card" href="calculators/water-measurement.html"><div class="kpi-icon">💧</div><h3>1. Water Measurement</h3><p>Pump, field-depth, V-notch, drip and sprinkler measurement methods.</p></a>
+<a class="kpi-card" href="calculators/water-saving.html"><div class="kpi-icon">🌊</div><h3>2. Water Saving</h3><p>Same crop, crop/variety change, intercropping and rainfed scenarios.</p></a>
+<a class="kpi-card" href="calculators/additional-production.html"><div class="kpi-icon">🌾</div><h3>3. Additional Production</h3><p>Same crop and CEY-based crop-change/intercropping calculations.</p></a>
+<a class="kpi-card" href="calculators/additional-income.html"><div class="kpi-icon">₹</div><h3>4. Additional Income</h3><p>Programme-control crop economics and incremental net income.</p></a>
+<a class="kpi-card" href="calculators/person-days.html"><div class="kpi-icon">👷</div><h3>5. Person-Days</h3><p>CACP year × season × state × crop labour intensity and employment calculation.</p></a>
+</div></section>
+<section class="section card flow"><span class="flow-box">Water Measurement</span><span class="flow-arrow">→</span><span class="flow-box">Water Saving</span><span class="flow-arrow">↘</span><span class="flow-box">KPI Summary</span><span class="flow-arrow">↗</span><span class="flow-box">Additional Production</span><span class="flow-arrow">→</span><span class="flow-box">Person-Days</span><span class="flow-box">Crop Economics</span><span class="flow-arrow">→</span><span class="flow-box">Additional Income</span></section>
+<section class="section"><div class="section-head"><div><p class="eyebrow">Browser session</p><h2>Latest saved calculation results</h2></div><button class="btn danger" id="resetSession">Reset session</button></div><div class="session-grid"><div class="session-item"><span>Water Saving</span><strong id="sumWater">—</strong></div><div class="session-item"><span>Additional Production</span><strong id="sumProduction">—</strong></div><div class="session-item"><span>Additional Income</span><strong id="sumIncome">—</strong></div><div class="session-item"><span>Person-Days</span><strong id="sumPersonDays">—</strong></div></div></section>
+<section class="section notice warn"><strong>Important:</strong> This is an independent calculation aid, not an official HUF portal. Users should retain field evidence, source records and applicable approvals for assurance/reporting.</section>
+</main>
+  <div id="site-footer"></div>
+  <script src="./assets/js/site-config.js"></script>
+  <script src="./assets/js/site-shell.js"></script>
+  <script src="./assets/js/app-state.js"></script>
+  <script src="./assets/js/calculators.js"></script>
+  <script src="./assets/js/page-utils.js"></script>
+  <script src="assets/js/home-page.js"></script>
+</body>
+</html>

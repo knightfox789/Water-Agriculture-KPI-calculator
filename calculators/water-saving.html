@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Water Saving - Water & Agriculture KPI Calculator" />
+  <title>Water Saving | Water & Agriculture KPI Calculator</title>
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  
+</head>
+<body data-root="..">
+  <div id="site-header"></div>
+  <main class="container"><section class="page-head"><p class="eyebrow">Calculator 2 of 5</p><h1>Water Saving</h1><p class="lede">Calculate demand-side water saving using the SOP scenario that matches the programme/control arrangement.</p></section><div class="layout-2"><section class="calculator-card"><div class="field full"><label>Water-saving scenario</label><select id="scenarioSelect"><option value="same">Same crop in programme and control</option><option value="change">Crop / variety change</option><option value="intercrop">Intercropping</option><option value="rainfed">Rainfed agriculture</option></select></div><div id="calcMessage" hidden></div>
+<div data-scenario-panel="same"><div class="notice">Same crop: compare programme and control water applied on a per-hectare basis.</div><div class="form-grid"><div class="field"><label>Control water (m³/ha)</label><input id="simpleControl" type="number" step="0.01"></div><div class="field"><label>Programme water (m³/ha)</label><input id="simpleProgramme" type="number" step="0.01"></div><div class="field"><label>Adopted area (ha)</label><input id="simpleArea" type="number" step="0.01"></div></div><button class="btn" id="loadMeasured" style="margin-top:12px">Load saved Water Measurement values</button><div class="formula">Water Saved (m³/ha) = Control Water − Programme Water</div></div>
+<div data-scenario-panel="change" hidden><div class="notice">Crop/variety change uses the same comparison formula. Enter old-crop water as Control and new-crop water as Programme in the shared fields below, then switch to Same Crop to use the numeric form. This framework keeps one source of truth for the formula.</div><div class="form-grid"><div class="field"><label>Old crop water (m³/ha)</label><input id="changeControl" type="number" step="0.01"></div><div class="field"><label>New crop water (m³/ha)</label><input id="changeProgramme" type="number" step="0.01"></div><div class="field"><label>Adopted area (ha)</label><input id="changeArea" type="number" step="0.01"></div></div><div class="formula">Water Saved (m³/ha) = Old Crop Water − New Crop Water</div></div>
+<div data-scenario-panel="intercrop" hidden><div class="form-grid"><div class="field"><label>Total programme water on 1-ha intercrop plot (KL)</label><input id="interTotalWater" type="number" step="0.01"></div><div class="field"><label>Adopted intercropping area (ha)</label><input id="interArea" type="number" step="0.01"></div></div><h3 style="margin-top:18px">Crop components</h3><div id="waterCropRows"></div><button class="btn" id="addWaterCrop">+ Add Crop</button><div class="notice warn">Programme yield is entered as the crop's production from a representative 1-ha intercropped plot. Control values are from comparable monocrop conditions.</div><div class="formula">Saving KL/kg = Control Water/Yield − Programme Allocated Water/Yield</div></div>
+<div data-scenario-panel="rainfed" hidden><div class="form-grid"><div class="field"><label>Effective rainfall (mm)</label><input id="rainRainfall" type="number" step="0.01"></div><div class="field"><label>Control yield (kg/ha)</label><input id="rainCY" type="number" step="0.01"></div><div class="field"><label>Programme yield (kg/ha)</label><input id="rainPY" type="number" step="0.01"></div><div class="field"><label>Adopted area (ha)</label><input id="rainArea" type="number" step="0.01"></div></div><div class="formula">Saving (mm) = R × (WPp − WPc) ÷ WPp; 1 mm/ha = 10 m³</div></div>
+<div class="form-actions"><button class="btn primary" id="calculateBtn">Calculate Water Saving</button></div></section><aside class="result-card"><p class="eyebrow">KPI output</p><h2>Demand-Side Water Saving</h2><div class="metric-grid"><div class="metric"><span>Saving / ha</span><strong id="savingPerHa">—</strong></div><div class="metric accent"><span>Total water saved</span><strong id="totalSaving">—</strong></div><div class="metric"><span>Reduction</span><strong id="savingPercent">—</strong></div></div><div class="notice"><strong>Evidence reminder:</strong> Retain programme/control measurements, farmer/crop records, adopted area and scenario justification.</div></aside></div></main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/site-shell.js"></script>
+  <script src="../assets/js/app-state.js"></script>
+  <script src="../assets/js/calculators.js"></script>
+  <script src="../assets/js/page-utils.js"></script>
+  <script src="../assets/js/water-saving-page.js"></script>
+</body>
+</html>
